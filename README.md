@@ -40,7 +40,7 @@ The application runs in dictionary mode without an API key. For generated transl
 
 ```dotenv
 GROQ_API_KEY=your-key-here
-GROQ_MODEL=llama-3.3-70b-versatile
+GROQ_MODEL=openai/gpt-oss-120b
 GROQ_AUDIO_MODEL=whisper-large-v3-turbo
 ```
 

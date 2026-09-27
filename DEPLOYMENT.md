@@ -25,7 +25,7 @@ git push -u origin main
 
 ## Netlify and API hosting
 
-Netlify hosts the static frontend; it does not run this FastAPI application. A separate FastAPI service is required for full-model translation, file/audio uploads, and links. Deploy the Dockerfile to a Python/container host and set `GROQ_API_KEY` in that service's secret settings. Without an API service the static site supports only its local glossary dictionary mode.
+Netlify hosts the static frontend; it does not run this FastAPI application. A separate FastAPI service is required for full-model translation, file/audio uploads, and links. Deploy the Dockerfile to a Python/container host and set `GROQ_API_KEY` in that service's secret settings. The default model is `openai/gpt-oss-120b`; if the host has an explicit `GROQ_MODEL`, set it to this value because `llama-3.3-70b-versatile` was retired by Groq. Without an API service the static site supports only its local glossary dictionary mode.
 
 Then connect the GitHub repository in Netlify. The included `netlify.toml` sets the build command and publish directory. No environment variables are needed for the static dictionary mode. To use a separately deployed FastAPI service, optionally set:
 
