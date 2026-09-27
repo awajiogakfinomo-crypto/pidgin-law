@@ -121,4 +121,4 @@ Netlify can host the static frontend using the included `netlify.toml`:
 - No environment variables are required for static dictionary mode.
 - Set `API_BASE_URL` to a public FastAPI service URL to enable server-backed translation, files, audio, links, and exports.
 
-Netlify does not run this Python API. Deploy the Dockerfile to a Python-capable host and set `GROQ_API_KEY` there. Keep the API URL and provider key server-side.
+Netlify does not run this Python API. Deploy the Dockerfile to a container host such as Render and set `GROQ_API_KEY` there. Keep the API URL and provider key server-side. The Dockerfile uses the host-provided `PORT` value.
