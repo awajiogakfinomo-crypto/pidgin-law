@@ -14,7 +14,7 @@ from app.services.source_ingest import (
     is_audio_filename,
     mime_type_for_audio,
 )
-from app.services.translator import translate_document, translate_gemini_media
+from app.services.translator import translate_document, translate_groq_audio
 
 router = APIRouter(prefix="/api/translate", tags=["translate"])
 
@@ -43,9 +43,9 @@ async def translate_file(
 
     try:
         if is_audio_filename(filename):
-            if not settings.gemini_configured:
-                raise HTTPException(status_code=503, detail="Configure GEMINI_API_KEY on the server to translate audio files.")
-            return translate_gemini_media(
+            if not settings.groq_configured:
+                raise HTTPException(status_code=503, detail="Configure GROQ_API_KEY on the server to translate audio files.")
+            return translate_groq_audio(
                 data,
                 mime_type_for_audio(filename),
                 tone,
@@ -56,16 +56,7 @@ async def translate_file(
 
         text = extract_file_text(filename, data)
         if not text and filename.lower().endswith(".pdf"):
-            if not settings.gemini_configured:
-                raise HTTPException(status_code=503, detail="This PDF has no extractable text. Configure GEMINI_API_KEY for scanned-PDF translation.")
-            return translate_gemini_media(
-                data,
-                "application/pdf",
-                tone,
-                include_glossary,
-                settings,
-                filename,
-            )
+            raise HTTPException(status_code=400, detail="This PDF has no selectable text. Groq audio translation is supported, but scanned-PDF OCR is not enabled.")
         return translate_document(text, tone, include_glossary, settings)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
@@ -88,9 +79,11 @@ def translate_url(
     try:
         source = fetch_url_source(payload.url)
         if source.media is not None and source.mime_type:
-            if not settings.gemini_configured:
-                raise HTTPException(status_code=503, detail="Configure GEMINI_API_KEY on the server to translate linked audio or scanned PDF files.")
-            return translate_gemini_media(
+            if source.mime_type == "application/pdf":
+                raise HTTPException(status_code=400, detail="Scanned PDF links are not supported. Use a searchable PDF or paste its text.")
+            if not settings.groq_configured:
+                raise HTTPException(status_code=503, detail="Configure GROQ_API_KEY on the server to translate linked audio files.")
+            return translate_groq_audio(
                 source.media,
                 source.mime_type,
                 payload.tone,

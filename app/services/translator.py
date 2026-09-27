@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import base64
 import hashlib
 import json
 import logging
@@ -9,7 +8,6 @@ import threading
 from collections import OrderedDict
 from time import perf_counter
 
-import httpx
 from openai import OpenAI
 
 from app.config import Settings, get_settings
@@ -71,11 +69,11 @@ def translate_document(
 
     dictionary_hits = detect_terms(text) if include_glossary else []
 
-    if settings.gemini_configured:
+    if settings.groq_configured:
         try:
-            result = _translate_with_gemini(text, tone, dictionary_hits, include_glossary, settings)
+            result = _translate_with_groq(text, tone, dictionary_hits, include_glossary, settings)
         except Exception as exc:  # noqa: BLE001
-            logger.exception("Gemini translation failed; using dictionary fallback")
+            logger.exception("Groq translation failed; using dictionary fallback")
             result = _dictionary_fallback(
                 text,
                 tone,
@@ -83,21 +81,6 @@ def translate_document(
                 caution=(
                     "Full Pidgin translation no succeed this time "
                     f"({exc.__class__.__name__}). We show dictionary explanations instead."
-                ),
-            )
-    elif settings.xai_api_key and settings.xai_api_key.strip():
-        try:
-            result = _translate_with_llm(text, tone, dictionary_hits, include_glossary, settings)
-        except Exception as exc:  # noqa: BLE001
-            logger.exception("LLM translation failed; using dictionary fallback")
-            result = _dictionary_fallback(
-                text,
-                tone,
-                dictionary_hits,
-                caution=(
-                    "Full Pidgin translation no succeed this time "
-                    f"({exc.__class__.__name__}). We show dictionary explanations "
-                    "so you still fit follow di important legal terms. Try again shortly."
                 ),
             )
     else:
@@ -112,132 +95,7 @@ def translate_document(
     return result
 
 
-def _translate_with_gemini(
-    text: str,
-    tone: Tone,
-    dictionary_hits: list[GlossaryEntry],
-    include_glossary: bool,
-    settings: Settings,
-) -> TranslateResponse:
-    chunks = chunk_text(text, max_words=settings.chunk_words)
-    translations: list[str] = []
-    model_glossary: list[GlossaryEntry] = []
-    cautions: list[str] = []
-
-    for index, chunk in enumerate(chunks, start=1):
-        prompt = (
-            user_prompt(chunk, tone, dictionary_hits)
-            if len(chunks) == 1
-            else chunk_user_prompt(chunk, tone, dictionary_hits, index, len(chunks))
-        )
-        response = httpx.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{settings.gemini_model}:generateContent",
-            headers={"x-goog-api-key": settings.gemini_api_key},
-            json={
-                "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT}]},
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "temperature": 0.25,
-                    "responseMimeType": "application/json",
-                },
-            },
-            timeout=settings.request_timeout,
-        )
-        response.raise_for_status()
-        payload = response.json()
-        candidates = payload.get("candidates") or []
-        parts = candidates[0].get("content", {}).get("parts", []) if candidates else []
-        raw = "".join(part.get("text", "") for part in parts if isinstance(part, dict))
-        if not raw.strip():
-            raise TranslationError("Gemini returned an empty response.")
-        result = _extract_json(raw)
-        translation = str(result.get("translation") or "").strip()
-        if not translation:
-            raise TranslationError("Gemini JSON is missing a translation field.")
-        translations.append(translation)
-        model_glossary.extend(_parse_model_glossary(result.get("glossary") or []))
-        if result.get("caution"):
-            cautions.append(str(result["caution"]).strip())
-
-    full_translation = "\n\n".join(translations)
-    glossary = merge_glossary(dictionary_hits, model_glossary) if include_glossary else []
-    pairs = pair_paragraphs(text, full_translation)
-    return TranslateResponse(
-        original=text,
-        translation=full_translation,
-        tone=tone,
-        glossary=glossary,
-        paragraphs=[ParagraphPair(english=en, pidgin=pid) for en, pid in pairs],
-        word_count=count_words(text),
-        mode="llm",
-        caution=" ".join(cautions) or None,
-        disclaimer=DISCLAIMER,
-    )
-
-
-def translate_gemini_media(
-    media: bytes,
-    mime_type: str,
-    tone: Tone,
-    include_glossary: bool,
-    settings: Settings,
-    source_label: str,
-) -> TranslateResponse:
-    if not settings.gemini_configured:
-        raise ValueError("Set GEMINI_API_KEY on the server to translate audio or scanned PDF files.")
-
-    dictionary_hits: list[GlossaryEntry] = []
-    prompt = (
-        f"Tone: {tone.value.upper()} Nigerian Pidgin.\n\n"
-        "The attached source is an audio recording or PDF document containing legal content. "
-        "Read or transcribe all legible English legal content, then translate it into Nigerian Pidgin. "
-        "For audio, transcribe speech faithfully before translating; omit non-legal conversation only "
-        "if it is clearly unrelated. Preserve names, dates, amounts, paragraph/section structure, "
-        "and every legal condition. Follow all rules in the system instruction. "
-        "Return JSON with transcription (the source text you could read/hear), translation, "
-        "glossary, and caution.\n\n"
-        f"Source file: {source_label}"
-    )
-    response = httpx.post(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{settings.gemini_model}:generateContent",
-        headers={"x-goog-api-key": settings.gemini_api_key},
-        json={
-            "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT + "\nFor this media request, also return a transcription field containing the source words you could read or hear."}]},
-            "contents": [{"role": "user", "parts": [
-                {"text": prompt},
-                {"inlineData": {"mimeType": mime_type, "data": base64.b64encode(media).decode("ascii")}},
-            ]}],
-            "generationConfig": {"temperature": 0.25, "responseMimeType": "application/json"},
-        },
-        timeout=settings.request_timeout,
-    )
-    response.raise_for_status()
-    candidates = response.json().get("candidates") or []
-    parts = candidates[0].get("content", {}).get("parts", []) if candidates else []
-    raw = "".join(part.get("text", "") for part in parts if isinstance(part, dict))
-    if not raw.strip():
-        raise TranslationError("Gemini returned an empty response for this file.")
-    payload = _extract_json(raw)
-    translation = str(payload.get("translation") or "").strip()
-    if not translation:
-        raise TranslationError("Gemini JSON is missing a translation field.")
-
-    glossary = _parse_model_glossary(payload.get("glossary") or []) if include_glossary else []
-    source_text = str(payload.get("transcription") or payload.get("source_text") or source_label).strip()
-    return TranslateResponse(
-        original=source_text,
-        translation=translation,
-        tone=tone,
-        glossary=glossary,
-        paragraphs=[ParagraphPair(english=source_text, pidgin=translation)],
-        word_count=count_words(source_text),
-        mode="llm",
-        caution=str(payload["caution"]).strip() if payload.get("caution") else None,
-        disclaimer=DISCLAIMER,
-    )
-
-
-def _translate_with_llm(
+def _translate_with_groq(
     text: str,
     tone: Tone,
     dictionary_hits: list[GlossaryEntry],
@@ -245,8 +103,8 @@ def _translate_with_llm(
     settings: Settings,
 ) -> TranslateResponse:
     client = OpenAI(
-        api_key=settings.xai_api_key,
-        base_url=settings.xai_base_url,
+        api_key=settings.groq_api_key,
+        base_url=settings.groq_base_url,
         timeout=settings.request_timeout,
     )
     chunks = chunk_text(text, max_words=settings.chunk_words)
@@ -292,6 +150,33 @@ def _translate_with_llm(
     )
 
 
+def translate_groq_audio(
+    media: bytes,
+    mime_type: str,
+    tone: Tone,
+    include_glossary: bool,
+    settings: Settings,
+    source_label: str,
+) -> TranslateResponse:
+    if not settings.groq_configured:
+        raise ValueError("Set GROQ_API_KEY on the server to translate audio files.")
+
+    client = OpenAI(
+        api_key=settings.groq_api_key,
+        base_url=settings.groq_base_url,
+        timeout=settings.request_timeout,
+    )
+    transcription = client.audio.transcriptions.create(
+        model=settings.groq_audio_model,
+        file=(source_label, media, mime_type),
+        response_format="text",
+    )
+    source_text = str(getattr(transcription, "text", transcription)).strip()
+    if not source_text:
+        raise TranslationError("Groq returned an empty audio transcription.")
+    return translate_document(source_text, tone, include_glossary, settings)
+
+
 def _complete_json(client: OpenAI, prompt: str, settings: Settings) -> dict:
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -310,7 +195,7 @@ def _chat_complete(client: OpenAI, messages: list[dict], settings: Settings) -> 
         try:
             try:
                 response = client.chat.completions.create(
-                    model=settings.xai_model,
+                    model=settings.groq_model,
                     messages=messages,
                     temperature=0.25,
                     response_format={"type": "json_object"},
@@ -318,7 +203,7 @@ def _chat_complete(client: OpenAI, messages: list[dict], settings: Settings) -> 
             except Exception:
                 # Some models reject response_format; retry without it once per attempt.
                 response = client.chat.completions.create(
-                    model=settings.xai_model,
+                    model=settings.groq_model,
                     messages=messages,
                     temperature=0.25,
                 )
@@ -330,11 +215,11 @@ def _chat_complete(client: OpenAI, messages: list[dict], settings: Settings) -> 
             last_error = exc
             logger.warning("Chat completion attempt %s failed: %s", attempt + 1, exc)
 
-        # Fallback to the Responses API (SpaceXAI / xAI recommended path).
+        # Retry through the compatible responses endpoint when available.
         try:
             joined = "\n\n".join(f"{m['role'].upper()}: {m['content']}" for m in messages)
             response = client.responses.create(
-                model=settings.xai_model,
+                model=settings.groq_model,
                 input=joined,
                 temperature=0.25,
             )

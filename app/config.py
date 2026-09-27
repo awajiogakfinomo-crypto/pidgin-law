@@ -16,11 +16,10 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
 
-    gemini_api_key: str = ""
-    gemini_model: str = "gemini-3.8-flash"
-    xai_api_key: str = ""
-    xai_base_url: str = "https://api.x.ai/v1"
-    xai_model: str = "grok-4.5"
+    groq_api_key: str = ""
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+    groq_model: str = "llama-3.3-70b-versatile"
+    groq_audio_model: str = "whisper-large-v3-turbo"
 
     max_words: int = 0
     request_timeout: float = 120.0
@@ -29,16 +28,16 @@ class Settings(BaseSettings):
     chunk_words: int = 1400
 
     @property
-    def gemini_configured(self) -> bool:
-        return bool(self.gemini_api_key and self.gemini_api_key.strip())
+    def groq_configured(self) -> bool:
+        return bool(self.groq_api_key and self.groq_api_key.strip())
 
     @property
     def llm_configured(self) -> bool:
-        return self.gemini_configured or bool(self.xai_api_key and self.xai_api_key.strip())
+        return self.groq_configured
 
     @property
     def active_model(self) -> str:
-        return self.gemini_model if self.gemini_configured else self.xai_model
+        return self.groq_model
 
 
 @lru_cache
