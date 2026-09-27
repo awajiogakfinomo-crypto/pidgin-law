@@ -211,7 +211,7 @@
   async function submitSource(path, payload, loadingMessage) {
     if (state.busy) return;
     if (staticMode) {
-      showStatus("error", "File, audio, and link translation need the FastAPI server. Start it with python run.py.");
+      showStatus("error", "File, audio, and link translation need a deployed FastAPI service. Set API_BASE_URL in Netlify and redeploy; for local use, start the server with python run.py.");
       return;
     }
     state.busy = true;
