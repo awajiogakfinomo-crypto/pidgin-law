@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pidgin Law">
+  <rect width="64" height="64" rx="14" fill="#1b7a4e"/>
+  <path d="M32 10v36" stroke="#f7f1e3" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="10" r="3.2" fill="#e2b33a"/>
+  <path d="M18 22c0 8 6 14 14 14s14-6 14-14" fill="none" stroke="#f7f1e3" stroke-width="2.4"/>
+  <circle cx="18" cy="22" r="7" fill="#0f3d28" stroke="#e2b33a" stroke-width="1.6"/>
+  <circle cx="46" cy="22" r="7" fill="#0f3d28" stroke="#e2b33a" stroke-width="1.6"/>
+  <path d="M24 50h16l-2 6H26z" fill="#e2b33a"/>
+  <path d="M40 40.5c6 0 11 3.4 11 7.6 0 2.2-1.5 4-4 5.2l.6 4.2-4.4-2.4c-1 .2-2.1.3-3.2.3-6 0-11-3.4-11-7.6S34 40.5 40 40.5z" fill="#f7f1e3"/>
+</svg>

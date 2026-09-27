@@ -1,0 +1,730 @@
+[
+  {
+    "term": "indemnify",
+    "aliases": ["indemnification", "indemnity", "indemnifies", "indemnified", "hold harmless"],
+    "pidgin_term": "cover person for any loss",
+    "explanation": "To protect or pay person back if wahala, loss, or extra cost happen because of di matter wey una agree.",
+    "example": "If your work cause another person loss, you go indemnify am — meaning you go pay for di loss."
+  },
+  {
+    "term": "force majeure",
+    "aliases": ["act of god", "vis major"],
+    "pidgin_term": "big wahala wey nobody fit control",
+    "explanation": "Serious event wey nobody cause and nobody fit stop — like flood, war, pandemic, or sudden government order — wey fit delay or stop people from do wetin dem promise.",
+    "example": "If flood lock di road and goods no fit reach, na force majeure; dem no go treat am as say person just refuse to do di work."
+  },
+  {
+    "term": "lien",
+    "aliases": ["liens"],
+    "pidgin_term": "right to hold property until dem pay",
+    "explanation": "Legal right wey person get to keep another person property or goods until di money wey dem owe don pay finish.",
+    "example": "Mechanic fit get lien for your car until you pay di repair bill."
+  },
+  {
+    "term": "statute of limitations",
+    "aliases": ["limitation period", "limitation of action", "time-barred", "time barred"],
+    "pidgin_term": "deadline to take person go court",
+    "explanation": "Di law set time limit. If you wait pass that time before you sue, court fit say your case don die.",
+    "example": "If di statute of limitations for your matter na 6 years, you no fit wait 8 years come carry am go court."
+  },
+  {
+    "term": "waiver",
+    "aliases": ["waive", "waived", "waives", "waiving"],
+    "pidgin_term": "to drop your right",
+    "explanation": "When you voluntarily leave one right wey you get, like say you no go claim am again. Once you waive am well, e fit hard to bring am back.",
+    "example": "If you sign waiver, you don agree say you no go later come claim that right for court."
+  },
+  {
+    "term": "jurisdiction",
+    "aliases": ["jurisdictional"],
+    "pidgin_term": "which court get power for di matter",
+    "explanation": "Di power wey particular court or authority get to hear and decide one case. If court no get jurisdiction, e no fit give valid judgment.",
+    "example": "Lagos High Court no get jurisdiction to hear small tenancy matter wey law give only Magistrate Court."
+  },
+  {
+    "term": "consideration",
+    "aliases": [],
+    "pidgin_term": "wetin each person give to make contract valid",
+    "explanation": "Di something of value — money, work, goods, or promise — wey each side give di other. For many contracts, if consideration no dey, di agreement fit no bind.",
+    "example": "You go pay ₦500,000, landlord go give you house for one year. That exchange na consideration."
+  },
+  {
+    "term": "breach",
+    "aliases": ["breaches", "breached", "breaching", "breach of contract"],
+    "pidgin_term": "to break di agreement",
+    "explanation": "When person fail to do wetin e promise for contract, or e do something wey di contract forbid.",
+    "example": "If tenant no pay rent for three months, na breach of di tenancy agreement."
+  },
+  {
+    "term": "damages",
+    "aliases": ["compensatory damages", "general damages", "special damages"],
+    "pidgin_term": "money wey court go order person to pay for loss",
+    "explanation": "Compensation — normally money — wey court give di person wey suffer loss because another person break di law or contract.",
+    "example": "Court fit award damages make landlord pay tenant for property wey landlord spoil."
+  },
+  {
+    "term": "liquidated damages",
+    "aliases": ["agreed damages"],
+    "pidgin_term": "fixed amount wey una don already agree if wahala happen",
+    "explanation": "Amount wey parties write for contract as di money to pay if one side break di agreement. E suppose be fair estimate of loss, not just punishment.",
+    "example": "If contractor delay finish house, e go pay ₦50,000 every week as liquidated damages."
+  },
+  {
+    "term": "arbitration",
+    "aliases": ["arbitrate", "arbitrator", "arbitral"],
+    "pidgin_term": "private judge wey una choose instead of regular court",
+    "explanation": "Way to settle dispute outside normal court: una pick one or more independent people (arbitrators) wey go hear both sides and give decision wey fit bind una.",
+    "example": "Di contract say any fight go first go arbitration for Lagos, not High Court."
+  },
+  {
+    "term": "mediation",
+    "aliases": ["mediate", "mediator"],
+    "pidgin_term": "peace talk with middle person",
+    "explanation": "Neutral person go help both sides talk and try reach agreement. Mediator no dey force judgment; e dey help una settle.",
+    "example": "Before una sue, make una try mediation so matter no burn money for court."
+  },
+  {
+    "term": "governing law",
+    "aliases": ["applicable law", "choice of law"],
+    "pidgin_term": "which country or state law go control di contract",
+    "explanation": "Di law wey una choose go interpret di agreement if wahala happen. For Nigeria, e fit be Laws of Lagos, Laws of the Federation, or another place.",
+    "example": "This agreement go dey under governing law of Lagos State, Nigeria."
+  },
+  {
+    "term": "severability",
+    "aliases": ["severable", "savings clause"],
+    "pidgin_term": "if one part no valid, di rest still stand",
+    "explanation": "If court throw away one clause as illegal or invalid, di remaining parts of di contract go still work.",
+    "example": "Because of severability, even if di non-compete clause fail, di salary and notice clauses still bind una."
+  },
+  {
+    "term": "entire agreement",
+    "aliases": ["entire agreement clause", "whole agreement", "integration clause"],
+    "pidgin_term": "only wetin dey this paper na di full agreement",
+    "explanation": "Clause wey say this written contract na di complete deal. Old talk, WhatsApp, or side promise wey no enter this paper no go count.",
+    "example": "Entire agreement clause mean say landlord no fit later claim extra promise wey e tok for phone if e no write am here."
+  },
+  {
+    "term": "assignment",
+    "aliases": ["assign", "assigns", "assigned", "assignee", "assignor"],
+    "pidgin_term": "to transfer your right give another person",
+    "explanation": "To pass your rights (and sometimes duties) under a contract to somebody else. Some contracts no gree make you assign without permission.",
+    "example": "Tenant no fit assignment of this lease to another person unless landlord write say e agree."
+  },
+  {
+    "term": "warranty",
+    "aliases": ["warranties", "warrant", "warrants", "warranted"],
+    "pidgin_term": "promise say something true or go work well",
+    "explanation": "Promise for contract say one fact true, or one product/service go meet certain standard. If e fail, di other side fit claim damages.",
+    "example": "Seller warranty say di generator na brand new and e go work for 12 months."
+  },
+  {
+    "term": "representation",
+    "aliases": ["representations", "misrepresentation"],
+    "pidgin_term": "statement wey person make to convince you enter deal",
+    "explanation": "Statement of fact wey one side give so di other side go agree. If e be lie and you rely on am, you fit cancel di contract or claim damages.",
+    "example": "Agent representation say di land get C of O. If e be lie, buyer fit take am up."
+  },
+  {
+    "term": "covenant",
+    "aliases": ["covenants", "covenantor"],
+    "pidgin_term": "serious promise wey bind you",
+    "explanation": "Formal promise inside deed or contract to do something, or not do something. Breaking covenant na breach.",
+    "example": "Tenant covenant say e no go use di house as shop."
+  },
+  {
+    "term": "condition precedent",
+    "aliases": ["conditions precedent"],
+    "pidgin_term": "thing wey must first happen before di deal start",
+    "explanation": "Event or action wey must occur before a duty or contract become active. Until e happen, person no dey bound to perform that part.",
+    "example": "Payment na condition precedent: landlord no go give key until you pay di first rent."
+  },
+  {
+    "term": "termination",
+    "aliases": ["terminate", "terminated", "terminates"],
+    "pidgin_term": "to end di agreement",
+    "explanation": "To stop a contract before or when e suppose expire, according to di rules wey di contract or law provide.",
+    "example": "Either side fit termination of this job contract with one month notice."
+  },
+  {
+    "term": "rescission",
+    "aliases": ["rescind", "rescinded"],
+    "pidgin_term": "to cancel di contract make e be like e never happen",
+    "explanation": "To unwind a contract and return both sides as close as possible to how dem dey before dem sign, often because of fraud, mistake, or misrepresentation.",
+    "example": "If dem hide serious defect for di land, buyer fit seek rescission and collect e money back."
+  },
+  {
+    "term": "estoppel",
+    "aliases": ["estopped", "promissory estoppel"],
+    "pidgin_term": "law no go gree you change mouth after person don trust your word",
+    "explanation": "If you make person believe something and dem act on am, you no fit later deny am just to punish dem.",
+    "example": "Landlord tok say 'no worry pay next month'. If tenant rely, estoppel fit stop landlord from suddenly claiming that month as default."
+  },
+  {
+    "term": "bona fide",
+    "aliases": ["bonafide", "good faith purchaser"],
+    "pidgin_term": "with genuine mind, no hide play",
+    "explanation": "Acting honestly, without intent to cheat. A bona fide buyer na person wey buy property genuinely, no sabi say wahala dey for di title.",
+    "example": "Court go protect bona fide buyer wey pay fair price and no know say di land get dispute."
+  },
+  {
+    "term": "caveat emptor",
+    "aliases": ["buyer beware"],
+    "pidgin_term": "buyer make e open eye well",
+    "explanation": "Old rule say buyer get duty to check wetin e dey buy. For land and some goods, you no fit later cry say you no inspect, unless seller hide something or lie.",
+    "example": "Caveat emptor mean say before you buy that plot, check C of O, survey, and whether people dey stay there."
+  },
+  {
+    "term": "without prejudice",
+    "aliases": [],
+    "pidgin_term": "this talk no go use against you for court",
+    "explanation": "When settlement talk mark 'without prejudice', you fit negotiate freely. Di other side no suppose use that offer as admission of guilt later for trial.",
+    "example": "Lawyer write without prejudice offer of ₦2 million to settle, so e no go count as say dem don admit liability."
+  },
+  {
+    "term": "good faith",
+    "aliases": ["utmost good faith", "uberrimae fidei"],
+    "pidgin_term": "to do things with honest mind",
+    "explanation": "Duty to act honestly, fairly, and no hide important thing. Insurance and some partnership deals take this one serious.",
+    "example": "You must disclose your health history for insurance in good faith; if you hide am, dem fit reject claim."
+  },
+  {
+    "term": "liability",
+    "aliases": ["liable", "legal liability"],
+    "pidgin_term": "who go answer if wahala happen",
+    "explanation": "Legal responsibility to pay, fix, or face consequence if loss, injury, or breach happen.",
+    "example": "Di company go carry liability if their driver cause accident while e dey do official work."
+  },
+  {
+    "term": "limitation of liability",
+    "aliases": ["liability cap", "limit of liability"],
+    "pidgin_term": "ceiling for how much you fit pay if wahala happen",
+    "explanation": "Clause wey cap di maximum amount one side go pay if something go wrong. Some losses (like fraud or death from negligence) law no gree make you fully exclude.",
+    "example": "Limitation of liability say company no go pay more than di fees wey you pay dem for 12 months."
+  },
+  {
+    "term": "confidentiality",
+    "aliases": ["non-disclosure", "nda", "non disclosure agreement", "confidential"],
+    "pidgin_term": "no leak di secret information",
+    "explanation": "Duty not to share private information with people wey no suppose sabi. Breaking am fit bring injunction and damages.",
+    "example": "Staff no fit post customer data online because of confidentiality clause."
+  },
+  {
+    "term": "non-compete",
+    "aliases": ["non compete", "restrictive covenant", "restraint of trade"],
+    "pidgin_term": "you no fit go do same business nearby for some time",
+    "explanation": "Clause wey try stop worker or seller from starting competing business, often for a time and area. For Nigeria, e must be reasonable or court fit throw am away.",
+    "example": "Di non-compete say you no go open similar shop within 2km for 12 months after you leave."
+  },
+  {
+    "term": "intellectual property",
+    "aliases": ["ip rights", "copyright", "trademark", "patent"],
+    "pidgin_term": "ownership of idea, name, design, or content",
+    "explanation": "Legal rights over creations of the mind — writing, logo, software, invention, brand name. Person wey own am fit stop others from using am without permission.",
+    "example": "All intellectual property for di app logo and code remain for di company, not di freelance developer, unless una write otherwise."
+  },
+  {
+    "term": "power of attorney",
+    "aliases": ["poa", "attorney-in-fact"],
+    "pidgin_term": "paper wey give another person power to act for you",
+    "explanation": "Legal document wey authorise somebody (your attorney) to sign, collect money, or handle property on your behalf. E fit be general or limited.",
+    "example": "If you dey abroad, you fit give your brother power of attorney to collect C of O and sign land papers."
+  },
+  {
+    "term": "certificate of occupancy",
+    "aliases": ["c of o", "c-of-o", "c. of o.", "statutory right of occupancy"],
+    "pidgin_term": "government paper wey show say you get right over land",
+    "explanation": "In Nigeria, C of O na document wey state government issue to show you get statutory right of occupancy over land. E no always mean say title 100% clean — still do search.",
+    "example": "No pay full land money until you see genuine Certificate of Occupancy and do land registry search."
+  },
+  {
+    "term": "governor's consent",
+    "aliases": ["governors consent", "governor consent"],
+    "pidgin_term": "state permission to transfer land",
+    "explanation": "Under the Land Use Act, you often need the Governor's consent before you validly assign, mortgage, or transfer right of occupancy. Without am, di transfer fit be incomplete.",
+    "example": "Bank no go take di land as full security until governor's consent for di mortgage don come out."
+  },
+  {
+    "term": "stamp duty",
+    "aliases": ["stamped", "stamping"],
+    "pidgin_term": "government tax for certain documents",
+    "explanation": "Tax wey you pay on some instruments (agreements, deeds, receipts). If paper no stamp, court fit refuse to use am as evidence until you pay plus penalty.",
+    "example": "Tenancy agreement wey pass a certain rent need stamp duty before you fit tender am well for court."
+  },
+  {
+    "term": "survey plan",
+    "aliases": ["beacon", "beacons"],
+    "pidgin_term": "map wey show di exact land boundary",
+    "explanation": "Drawing by licensed surveyor wey mark size, location, and beacons of a plot. E help confirm say di land wey you dey buy na di same one for paper.",
+    "example": "Carry surveyor go di site confirm di survey plan beacons before you pay."
+  },
+  {
+    "term": "deed",
+    "aliases": ["deed of assignment", "deed of gift", "title deed"],
+    "pidgin_term": "formal signed paper wey transfer or confirm right",
+    "explanation": "A serious legal document, usually signed, sealed/attested, used to transfer land or create obligations. Deed of Assignment na common way to pass land interest in Nigeria.",
+    "example": "Seller go sign deed of assignment to transfer e interest for di plot give you."
+  },
+  {
+    "term": "quiet enjoyment",
+    "aliases": ["covenant of quiet enjoyment"],
+    "pidgin_term": "right to stay for di house without unnecessary wahala",
+    "explanation": "Tenant right to use the property peacefully without landlord disturbing, harassing, or allowing others to interfere unlawfully.",
+    "example": "Landlord no fit dey enter your room anytime e like; e go break quiet enjoyment."
+  },
+  {
+    "term": "quit notice",
+    "aliases": ["notice to quit", "notice of owner's intention to recover possession"],
+    "pidgin_term": "official notice say make you comot from di house",
+    "explanation": "Written notice wey landlord give tenant to leave the premises. For Nigeria, di length and form depend on tenancy type and state tenancy law. Wrong notice fit spoil eviction case.",
+    "example": "For yearly tenancy, quit notice often need plenty months; no pack out just because one WhatsApp message land."
+  },
+  {
+    "term": "eviction",
+    "aliases": ["ejectment", "recover possession", "unlawful eviction"],
+    "pidgin_term": "to comot tenant from di house",
+    "explanation": "Process of removing a tenant. For Nigeria, landlord normally need valid notices plus court order. Self-help like throwing property outside or locking tenant out fit be illegal.",
+    "example": "Landlord no get right to lock your door and throw your things; proper eviction pass through court."
+  },
+  {
+    "term": "mesne profits",
+    "aliases": ["mesne profit"],
+    "pidgin_term": "money for di period you stay after your right don expire",
+    "explanation": "Amount court fit order occupier to pay for using property after tenancy don end, often calculated like rent for that extra period.",
+    "example": "If you refuse to leave after quit notice and judgment, you fit pay mesne profits until you comot."
+  },
+  {
+    "term": "lease",
+    "aliases": ["leased", "lessor", "lessee"],
+    "pidgin_term": "agreement to use property for fixed time for rent",
+    "explanation": "Contract wey give exclusive possession of property for a stated term in exchange for rent. Different from mere permission (licence).",
+    "example": "A 2-year lease give tenant exclusive possession of di shop until di term end, as long as e pay rent."
+  },
+  {
+    "term": "tenancy",
+    "aliases": ["tenant", "periodic tenancy"],
+    "pidgin_term": "arrangement wey person dey rent and stay for another person property",
+    "explanation": "Legal relationship between landlord and tenant. E fit be weekly, monthly, yearly, or for a fixed term. Rights and notices depend on how una set am.",
+    "example": "Monthly tenancy mean say notice period and rent cycle dey run month by month."
+  },
+  {
+    "term": "mortgage",
+    "aliases": ["mortgagor", "mortgagee", "legal mortgage"],
+    "pidgin_term": "use property as security for loan",
+    "explanation": "You borrow money and put land or house as security. If you no pay, lender fit take steps (with legal process) to recover from di property.",
+    "example": "Bank take mortgage over di house; if you default, dem fit start process to sell am recover di loan."
+  },
+  {
+    "term": "collateral",
+    "aliases": ["security", "secured interest"],
+    "pidgin_term": "property wey you put down for loan",
+    "explanation": "Asset pledged so lender go gree give you money. If you no pay, dem fit go after that asset.",
+    "example": "Your car papers na collateral for di salary loan."
+  },
+  {
+    "term": "foreclosure",
+    "aliases": ["foreclose"],
+    "pidgin_term": "lender take di property because you no pay",
+    "explanation": "Legal process wey mortgagee use to take and sell or keep the security when borrower default. Procedure must follow law and the mortgage deed.",
+    "example": "After plenty default, bank start foreclosure on di house to recover di outstanding loan."
+  },
+  {
+    "term": "easement",
+    "aliases": ["right of way"],
+    "pidgin_term": "right to pass or use another person land for particular purpose",
+    "explanation": "Limited right over another person's land, like right of way to your own house, drainage, or light. You no own di land; you just get that use.",
+    "example": "Neighbour get easement to walk through di side of your compound to reach e own gate."
+  },
+  {
+    "term": "affidavit",
+    "aliases": ["depose", "deposed", "deponent", "sworn statement"],
+    "pidgin_term": "written statement wey you swear na true",
+    "explanation": "Written evidence wey person swear before commissioner for oaths or notary. Lying for affidavit na serious offence (perjury).",
+    "example": "You go swear affidavit say you lost your original certificate before dem go give you certified true copy."
+  },
+  {
+    "term": "plaintiff",
+    "aliases": ["claimant"],
+    "pidgin_term": "di person wey carry di case go court",
+    "explanation": "The party that starts a civil case, asking court for relief. In some Nigerian courts dem dey call am Claimant.",
+    "example": "Di plaintiff sue di company for unpaid salary."
+  },
+  {
+    "term": "defendant",
+    "aliases": ["respondent"],
+    "pidgin_term": "di person wey dem don sue",
+    "explanation": "The person or company answering a claim in court. Dem get right to defend and file their own case if the rules allow.",
+    "example": "Di defendant deny say e owe di money wey dem claim."
+  },
+  {
+    "term": "writ of summons",
+    "aliases": ["originating process", "originating summons"],
+    "pidgin_term": "court paper wey start di case and call you come",
+    "explanation": "Official process that begins many High Court actions and commands the defendant to appear and answer the claim.",
+    "example": "Once writ of summons serve you, no ignore am; time dey run to enter appearance."
+  },
+  {
+    "term": "statement of claim",
+    "aliases": ["particulars of claim"],
+    "pidgin_term": "paper wey explain wetin you dey claim and why",
+    "explanation": "Pleading where the claimant sets out facts, legal basis, and the exact relief e want from court.",
+    "example": "Statement of claim go list di contract date, how dem break am, and di ₦3 million you dey ask."
+  },
+  {
+    "term": "statement of defence",
+    "aliases": ["statement of defense", "defence"],
+    "pidgin_term": "paper wey di other side use reply your claim",
+    "explanation": "Defendant's pleading that admits, denies, or explains the claimant's story and may raise other defences.",
+    "example": "For statement of defence, tenant fit say e don already pay and attach receipts."
+  },
+  {
+    "term": "judgment",
+    "aliases": ["judgement", "ruling", "order of court"],
+    "pidgin_term": "final decision wey court give",
+    "explanation": "The court's official decision that determines the rights of the parties. After judgment, enforcement fit follow if person no obey.",
+    "example": "Di judgment order landlord to refund ₦800,000 and give tenant 14 days to leave."
+  },
+  {
+    "term": "appeal",
+    "aliases": ["appellate", "appellant", "respondent on appeal"],
+    "pidgin_term": "to carry di case go higher court make dem review am",
+    "explanation": "Ask a higher court to look at whether the lower court make legal or factual error. Appeal get strict time limits.",
+    "example": "If you no gree with Magistrate judgment, you fit file appeal to High Court within di time wey law give."
+  },
+  {
+    "term": "injunction",
+    "aliases": ["restraining order", "interlocutory injunction", "mareva"],
+    "pidgin_term": "court order wey stop person from doing something",
+    "explanation": "Court command to do, or not do, a specific thing, often urgently to prevent irreparable harm. Breaking injunction na contempt.",
+    "example": "Court give injunction wey stop neighbour from building on di disputed boundary until di case finish."
+  },
+  {
+    "term": "ex parte",
+    "aliases": ["ex-parte"],
+    "pidgin_term": "court hear only one side, urgently",
+    "explanation": "Application heard without the other party present, usually because of emergency. Court still expect you to be honest (full disclosure).",
+    "example": "Lawyer go ex parte to freeze account because e fear say dem go siphon di money overnight."
+  },
+  {
+    "term": "locus standi",
+    "aliases": ["standing"],
+    "pidgin_term": "whether you even get right to bring this case",
+    "explanation": "You must show sufficient interest or that your right dey affected. If you no get locus standi, court fit strike out the case.",
+    "example": "Random neighbour no get locus standi to sue over a contract wey e no sign, unless law give am that right."
+  },
+  {
+    "term": "prima facie",
+    "aliases": [],
+    "pidgin_term": "on the face of am, e look like say case don show",
+    "explanation": "Evidence that is enough at first look to support a claim, unless the other side rebut it.",
+    "example": "Receipts and bank alerts fit establish prima facie proof say you pay rent."
+  },
+  {
+    "term": "burden of proof",
+    "aliases": ["onus of proof"],
+    "pidgin_term": "who suppose prove wetin e tok",
+    "explanation": "The duty to prove a fact. In civil cases e dey usually on the person who asserts. Standard na balance of probabilities, not 'beyond reasonable doubt' (that one na mainly criminal).",
+    "example": "If you claim say you pay, burden of proof dey your side to show receipt or transfer."
+  },
+  {
+    "term": "balance of probabilities",
+    "aliases": ["preponderance of evidence"],
+    "pidgin_term": "more likely true than not",
+    "explanation": "Civil standard of proof: court go believe the side wey story more likely, even if e no 100% sure.",
+    "example": "For contract case, you no need prove like criminal matter; balance of probabilities dey enough."
+  },
+  {
+    "term": "beyond reasonable doubt",
+    "aliases": [],
+    "pidgin_term": "no reasonable doubt remain say e do am",
+    "explanation": "High standard for criminal conviction. If reasonable doubt remain, accused suppose get benefit of that doubt.",
+    "example": "Police must prove theft beyond reasonable doubt before court go convict."
+  },
+  {
+    "term": "subpoena",
+    "aliases": ["witness summons"],
+    "pidgin_term": "court order wey force person to come or bring paper",
+    "explanation": "Command to attend court as witness or produce documents. Ignoring subpoena fit bring contempt proceedings.",
+    "example": "Bank receive subpoena to bring di account statements for di fraud trial."
+  },
+  {
+    "term": "contempt of court",
+    "aliases": ["contempt", "in contempt"],
+    "pidgin_term": "to disrespect or disobey court",
+    "explanation": "Conduct that insults the court or disobeys its order. Punishment fit be fine or imprisonment.",
+    "example": "If you post the child's name online after court ban am, that one fit be contempt of court."
+  },
+  {
+    "term": "commissioner for oaths",
+    "aliases": ["notary public", "notary"],
+    "pidgin_term": "person wey law authorise to swear your affidavit",
+    "explanation": "Official before whom you swear that an affidavit or statutory declaration is true. Many court registries and some lawyers dey serve this function.",
+    "example": "Carry your affidavit go commissioner for oaths stamp am before you file for court."
+  },
+  {
+    "term": "due process",
+    "aliases": ["fair hearing", "audi alteram partem"],
+    "pidgin_term": "make dem hear you fair before dem punish or decide",
+    "explanation": "Right to be notified, to know the case against you, and to be heard. Nigerian Constitution protect fair hearing.",
+    "example": "School no fit expel student without due process — query, chance to reply, and fair panel."
+  },
+  {
+    "term": "fundamental human rights",
+    "aliases": ["fundamental rights", "human rights"],
+    "pidgin_term": "basic rights wey Constitution give every person",
+    "explanation": "Rights in Chapter IV of the 1999 Constitution (as amended): life, dignity, personal liberty, fair hearing, private life, thought, expression, and others. You fit enforce dem in High Court.",
+    "example": "Unlawful detention by police fit be fundamental human rights case for High Court."
+  },
+  {
+    "term": "habeas corpus",
+    "aliases": [],
+    "pidgin_term": "court order make dem bring di person wey dem hold come court",
+    "explanation": "Remedy used to challenge unlawful detention. Court fit order the detaining authority to produce the person and justify the detention.",
+    "example": "Family file habeas corpus when police hold their brother pass the allowed time without charge."
+  },
+  {
+    "term": "bail",
+    "aliases": ["recognizance", "surety"],
+    "pidgin_term": "temporary freedom while case still dey on",
+    "explanation": "Release of an accused person with conditions (and often sureties) pending trial. Bail no mean say person don free forever.",
+    "example": "Court grant bail with two sureties and order say e no go travel out of state."
+  },
+  {
+    "term": "probate",
+    "aliases": ["letters of administration", "intestate", "testate", "executor", "administrator of estate"],
+    "pidgin_term": "court authority to manage dead person property",
+    "explanation": "If person die with a will, executors seek probate. If no will (intestate), family seek letters of administration before dem fit deal with bank or land.",
+    "example": "Bank no go release di deceased account until you show probate or letters of administration."
+  },
+  {
+    "term": "next of kin",
+    "aliases": [],
+    "pidgin_term": "person wey you name as close contact — e no automatically inherit everything",
+    "explanation": "Next of kin na contact person. E no equal automatic owner of your property. Inheritance still follow will or customary/statutory succession rules.",
+    "example": "Even if your name na next of kin for bank form, you still need probate or LoA to collect the money."
+  },
+  {
+    "term": "customary law",
+    "aliases": ["native law and custom"],
+    "pidgin_term": "traditional law wey community dey use",
+    "explanation": "Unwritten (often) rules of a community, recognised by Nigerian courts if not repugnant to natural justice, equity and good conscience, and not incompatible with statute.",
+    "example": "Some land under customary law dey family property; one person no fit sell am alone."
+  },
+  {
+    "term": "statutory marriage",
+    "aliases": ["marriage under the act", "marriage registry"],
+    "pidgin_term": "marriage wey una do under Marriage Act",
+    "explanation": "Marriage celebrated under the Marriage Act. E get different rights on property, divorce, and inheritance compared with some customary or Islamic marriages.",
+    "example": "Statutory marriage no gree extra wife; another marriage on top fit be offence."
+  },
+  {
+    "term": "child custody",
+    "aliases": ["custody", "access", "guardianship"],
+    "pidgin_term": "who go take care of di pikin and where e go stay",
+    "explanation": "Court decision on who has care and control of a child. Best interest of the child na di main guide, not just who 'win' the marriage fight.",
+    "example": "Court give mama child custody and papa weekend access plus school fees."
+  },
+  {
+    "term": "maintenance",
+    "aliases": ["alimony", "child support"],
+    "pidgin_term": "money to take care of spouse or pikin",
+    "explanation": "Financial support ordered or agreed for a spouse and/or children after separation or divorce.",
+    "example": "Papa go pay monthly maintenance for feeding, school, and hospital until di child adult."
+  },
+  {
+    "term": "negligence",
+    "aliases": ["duty of care", "breach of duty"],
+    "pidgin_term": "careless wey cause another person loss or injury",
+    "explanation": "Failure to take the care a reasonable person would take, which causes foreseeable harm. Hospital, driver, employer, and professional people fit face this claim.",
+    "example": "If hospital forget scissors for body after operation, that one fit be negligence."
+  },
+  {
+    "term": "defamation",
+    "aliases": ["libel", "slander"],
+    "pidgin_term": "to spoil person name with false talk",
+    "explanation": "Publishing a false statement that injures someone's reputation. Libel na written/posted; slander na spoken. Truth and fair comment fit be defence.",
+    "example": "To post false accusation say somebody be thief for Facebook fit be defamation (libel)."
+  },
+  {
+    "term": "trespass",
+    "aliases": ["trespasser"],
+    "pidgin_term": "to enter person land or property without permission",
+    "explanation": "Unlawful interference with another person's possession of land or goods. You no need to damage anything; mere unlawful entry fit be enough.",
+    "example": "To jump di fence enter compound without consent na trespass."
+  },
+  {
+    "term": "nuisance",
+    "aliases": ["private nuisance", "public nuisance"],
+    "pidgin_term": "to disturb person from enjoy e property or public space",
+    "explanation": "Unreasonable interference — noise, smell, blockage, pollution — with use of land or public rights.",
+    "example": "Generator wey dey blow black smoke into neighbour window every night fit be private nuisance."
+  },
+  {
+    "term": "fiduciary",
+    "aliases": ["fiduciary duty", "trustee"],
+    "pidgin_term": "person wey must put another person interest first",
+    "explanation": "Position of trust (director, trustee, lawyer, agent) wey law expect loyalty and no secret profit.",
+    "example": "Company director get fiduciary duty; e no fit divert company contract enter e own pocket."
+  },
+  {
+    "term": "power of sale",
+    "aliases": ["statutory power of sale"],
+    "pidgin_term": "right to sell di security if you default",
+    "explanation": "Right, often in a mortgage, for the lender to sell the property if the borrower does not pay, after required notices.",
+    "example": "If you default, bank fit use power of sale — but dem still must follow notice and good-faith sale rules."
+  },
+  {
+    "term": "indemnity clause",
+    "aliases": [],
+    "pidgin_term": "part of contract wey say who go carry another person loss",
+    "explanation": "Contract wording that shifts loss from one party to the other. Read am slow: e fit make you pay even for things you no cause, depending on how dem draft am.",
+    "example": "Di indemnity clause say contractor go pay if anybody injure for site, even visitors."
+  },
+  {
+    "term": "time is of the essence",
+    "aliases": ["time of the essence"],
+    "pidgin_term": "deadline na serious condition, no extra delay",
+    "explanation": "If this phrase dey, late performance fit be treated as a serious breach, not just small delay.",
+    "example": "Because time is of the essence, if you no deliver rice on 1 October, buyer fit reject di goods."
+  },
+  {
+    "term": "force and effect",
+    "aliases": ["full force and effect"],
+    "pidgin_term": "e still dey valid and e dey work",
+    "explanation": "Legal way to say a document or remaining clauses continue to bind the parties.",
+    "example": "Even after amendment, di rest of di contract remain in full force and effect."
+  },
+  {
+    "term": "hereinafter",
+    "aliases": ["herein", "hereof", "thereof", "whereby", "whereas"],
+    "pidgin_term": "lawyer English for 'for this paper / from now / of am'",
+    "explanation": "Old-style connecting words. 'Hereinafter called the Tenant' just mean 'from now we go call this person Tenant for this paper'.",
+    "example": "Mr Ade, hereinafter called the Tenant, go occupy Flat 4."
+  },
+  {
+    "term": "notwithstanding",
+    "aliases": [],
+    "pidgin_term": "even if another thing tok opposite",
+    "explanation": "This word make the clause in front override other clauses. E dey powerful — always check wetin e dey push aside.",
+    "example": "Notwithstanding any other clause, landlord fit enter if fire dey."
+  },
+  {
+    "term": "provided that",
+    "aliases": ["provided always", "provided however"],
+    "pidgin_term": "but this condition still apply",
+    "explanation": "Introduces an exception or extra condition. Di main rule dey work unless that proviso catch am.",
+    "example": "You fit sublet, provided that landlord first give written consent."
+  },
+  {
+    "term": "joint and several",
+    "aliases": ["jointly and severally"],
+    "pidgin_term": "dem fit collect di whole money from any one of una",
+    "explanation": "Each person is fully responsible for the whole obligation, not just their 'share'. Creditor fit chase one person for everything.",
+    "example": "Three guarantors sign jointly and severally, so bank fit recover all di loan from only one of dem."
+  },
+  {
+    "term": "guarantor",
+    "aliases": ["surety", "guarantee"],
+    "pidgin_term": "person wey promise to pay if di main person no pay",
+    "explanation": "You stand for another person's debt or duty. If they default, the creditor can come after you, sometimes even before chasing the main debtor, depending on the wording.",
+    "example": "If your friend no pay di loan, as guarantor you fit dey the one wey bank go pursue."
+  },
+  {
+    "term": "default",
+    "aliases": ["event of default"],
+    "pidgin_term": "when you fail to do wetin you promise, especially payment",
+    "explanation": "Failure to meet an obligation when due. Loan and lease papers list events of default that trigger extra powers (penalty, acceleration, eviction process).",
+    "example": "Missing three EMI payments na default under di loan agreement."
+  },
+  {
+    "term": "acceleration",
+    "aliases": ["accelerate", "acceleration clause"],
+    "pidgin_term": "whole remaining debt become due at once",
+    "explanation": "After default, lender fit declare that all remaining instalments are immediately payable, not just the missed ones.",
+    "example": "Because of acceleration clause, once you default, bank fit demand the full ₦8 million at once."
+  },
+  {
+    "term": "force majeure clause",
+    "aliases": [],
+    "pidgin_term": "clause wey explain wetin go happen if big uncontrollable wahala land",
+    "explanation": "The written rules for notice, delay, suspension, or exit when a force majeure event occurs. If e no dey the contract, common law frustration fit be harder to use.",
+    "example": "Di force majeure clause require say you notify the other side within 7 days of the flood."
+  },
+  {
+    "term": "service of process",
+    "aliases": ["serve", "served", "proof of service"],
+    "pidgin_term": "to officially give court paper to di other person",
+    "explanation": "Proper delivery of originating processes or notices. If service no correct, court fit set aside the case even if you 'win' in the person's absence.",
+    "example": "Dropping writ for gateman without following the rules fit make service of process invalid."
+  },
+  {
+    "term": "certified true copy",
+    "aliases": ["ctc"],
+    "pidgin_term": "copy wey registry stamp say e match di original",
+    "explanation": "Official copy of a filed document or public record, certified by the issuing office. Often required instead of photocopy.",
+    "example": "Court go ask for certified true copy of the marriage certificate, not ordinary phone picture."
+  },
+  {
+    "term": "without notice",
+    "aliases": ["summary"],
+    "pidgin_term": "dem no first tell di other side before court hear am",
+    "explanation": "Some urgent applications proceed without first notifying the opponent. After, you usually still must serve them so they can come set it aside if need be.",
+    "example": "They obtained a freezing order without notice because they feared dissipation of funds."
+  },
+  {
+    "term": "costs",
+    "aliases": ["cost of action", "awarded costs"],
+    "pidgin_term": "money for lawyer and court expenses wey loser fit pay",
+    "explanation": "Court fit order one party to pay the other party's legal costs. Winning your case no always mean you recover all lawyer fees.",
+    "example": "Court give judgment plus costs of ₦200,000 against the defendant."
+  },
+  {
+    "term": "settlement",
+    "aliases": ["out of court settlement", "terms of settlement", "consent judgment"],
+    "pidgin_term": "to agree settle di matter instead of continue fight",
+    "explanation": "Agreement that ends a dispute. If filed as consent judgment, e fit be enforced like a court order.",
+    "example": "Una do settlement: landlord refund half deposit, tenant pack out in 21 days."
+  },
+  {
+    "term": "vicarious liability",
+    "aliases": [],
+    "pidgin_term": "oga fit answer for wetin worker do for work",
+    "explanation": "Employer can be legally responsible for a worker's wrongful act if it happened in the course of employment.",
+    "example": "Transport company get vicarious liability if their driver cause accident while carrying official passengers."
+  },
+  {
+    "term": "constructive dismissal",
+    "aliases": ["forced resignation"],
+    "pidgin_term": "work condition become so bad say person no get real choice but to resign",
+    "explanation": "When an employer makes the job intolerable (demotion, unpaid salary for long, harassment) so the worker resigns. Law fit still treat am as dismissal.",
+    "example": "If dem stop your salary for 5 months and lock your office, resignation fit be constructive dismissal."
+  },
+  {
+    "term": "redundancy",
+    "aliases": ["laid off", "layoff"],
+    "pidgin_term": "job end because di work no dey again, not because you do bad",
+    "explanation": "Termination because the role is no longer needed. Labour Act and many contracts require notice and sometimes redundancy pay.",
+    "example": "Company close that branch; staff go for redundancy, not sack for misconduct."
+  },
+  {
+    "term": "unfair dismissal",
+    "aliases": ["wrongful dismissal", "unlawful termination"],
+    "pidgin_term": "dem comot you from work without follow di right process or fair reason",
+    "explanation": "Termination that breaches contract, statute, or fair hearing. Remedy fit be damages; reinstatement dey more common in some public/labour settings.",
+    "example": "Dem sack you on WhatsApp without query. That one fit be wrongful dismissal."
+  },
+  {
+    "term": "terms of service",
+    "aliases": ["terms and conditions", "tos", "user agreement"],
+    "pidgin_term": "rules wey govern how you use one service or app",
+    "explanation": "Contract between you and the platform. Clicking 'I agree' fit bind you, but unfair or illegal clauses still fit be challenged.",
+    "example": "Di terms of service say dem fit ban your account if you post hate speech."
+  },
+  {
+    "term": "privacy policy",
+    "aliases": ["data protection", "ndpr", "nigeria data protection"],
+    "pidgin_term": "how dem go collect, use, and share your personal information",
+    "explanation": "Notice plus legal duties on handling personal data. Nigeria has data protection rules (including NDPA/NDPR regime) that limit how companies use your data.",
+    "example": "Privacy policy must tok if dem go sell your phone number to advertisers."
+  }
+]

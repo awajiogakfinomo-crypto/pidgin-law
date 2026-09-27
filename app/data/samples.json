@@ -1,0 +1,37 @@
+[
+  {
+    "id": "quit-notice",
+    "title": "Landlord quit notice",
+    "category": "Tenancy",
+    "description": "A notice asking a tenant to leave a rented flat.",
+    "text": "TAKE NOTICE that I, Chief Adebayo Okonkwo, the landlord of the premises known as Flat 3, 14 Adeniyi Jones Avenue, Ikeja, Lagos, hereby give you, Mrs. Chioma Eze, the tenant, THREE (3) MONTHS' NOTICE TO QUIT and deliver up possession of the said premises which you hold of me as a yearly tenant.\n\nThe tenancy shall determine on the 31st day of December 2026, on which date you are required to vacate and peaceably yield up the premises together with all fixtures and fittings therein.\n\nTAKE FURTHER NOTICE that if you fail to quit and deliver up possession as aforesaid, I shall commence proceedings against you to recover possession and mesne profits, without further notice.\n\nThis notice is given without prejudice to any other right or remedy available to me under the tenancy agreement dated 1 January 2024 or under the Recovery of Premises Law of Lagos State.\n\nDated this 17th day of September 2026."
+  },
+  {
+    "id": "employment-clause",
+    "title": "Employment contract excerpt",
+    "category": "Work",
+    "description": "Confidentiality, notice, and non-compete clauses from a job contract.",
+    "text": "The Employee shall serve the Company faithfully and shall not, during the employment and for a period of twelve (12) months after termination, either on their own account or for any other person, solicit any customer of the Company with whom the Employee had material dealings in the last twelve months.\n\nEither party may terminate this Agreement by giving one (1) month's written notice, or payment in lieu of notice. The Company may terminate summarily without notice in the event of gross misconduct.\n\nThe Employee shall not disclose any confidential information of the Company, including client lists, pricing, and software source code, save as required by law. This confidentiality obligation shall survive termination.\n\nUpon termination, the Employee shall immediately return all Company property. Intellectual property created in the course of employment shall vest in the Company.\n\nNotwithstanding any other provision, the Employee's limitation of liability to the Company for ordinary negligence shall not exceed twelve months' gross salary, provided that nothing in this clause shall exclude liability for fraud, death, or personal injury caused by negligence."
+  },
+  {
+    "id": "loan-guarantee",
+    "title": "Personal loan guarantee",
+    "category": "Banking",
+    "description": "A guarantor clause that can make one person pay another person's whole debt.",
+    "text": "In consideration of the Lender agreeing to grant a facility of ₦4,500,000 (Four Million Five Hundred Thousand Naira) to Mr. Ibrahim Musa (the Borrower), I, Mrs. Aisha Bello, hereby irrevocably and unconditionally guarantee the due and punctual payment of all monies owing by the Borrower, jointly and severally with the Borrower.\n\nThis guarantee is a continuing security and shall remain in full force and effect until the facility, interest, and all charges have been irrevocably paid in full. The Lender may, without notice to me, grant time or other indulgence to the Borrower or amend the facility, without discharging my liability.\n\nUpon any Event of Default, including failure to pay any instalment for fourteen (14) days, the Lender may accelerate the outstanding balance, which shall become immediately due and payable, and may have recourse to me without first exhausting its remedies against the Borrower.\n\nI hereby waive any right to require the Lender to proceed against the Borrower or any collateral before claiming under this guarantee. I have read and understood this document and have been advised to seek independent legal advice."
+  },
+  {
+    "id": "terms-of-service",
+    "title": "App terms of service snippet",
+    "category": "Consumer",
+    "description": "Typical app small-print on liability, law, and disputes.",
+    "text": "By creating an account you agree to these Terms of Service and our Privacy Policy. We may amend these Terms at any time by posting an updated version. Continued use after the effective date constitutes acceptance.\n\nThe service is provided 'as is' and 'as available'. To the maximum extent permitted by applicable law, we disclaim all warranties, express or implied, including merchantability and fitness for a particular purpose.\n\nOur aggregate limitation of liability arising out of or relating to the service shall not exceed the greater of (a) fees you paid us in the twelve months preceding the claim, or (b) Five Thousand Naira (₦5,000). Nothing in these Terms excludes liability that cannot be excluded under the laws of the Federal Republic of Nigeria, including liability for fraud or death caused by negligence.\n\nThese Terms are governed by the laws of Nigeria. Any dispute shall first be submitted to mediation in Lagos. If unresolved within thirty (30) days, the dispute shall be referred to arbitration under the Arbitration and Mediation Act, 2023, before a single arbitrator in Lagos. The language of arbitration shall be English.\n\nIf any provision is held invalid, the remaining provisions shall remain in full force and effect (severability). These Terms constitute the entire agreement between you and us concerning the service."
+  },
+  {
+    "id": "land-offer",
+    "title": "Offer letter for land",
+    "category": "Property",
+    "description": "A land sale offer that talks about C of O, consent, and conditions.",
+    "text": "We offer to sell to you Plot 12, Block C, Harmony Estate, Lugbe, Abuja, more particularly delineated on Survey Plan No. KN/ABV/8821, for the purchase price of ₦28,000,000 (Twenty-Eight Million Naira).\n\nThis offer is subject to the following conditions precedent: (a) you paying a non-refundable deposit of ₦5,000,000 within seven (7) days; (b) satisfactory due diligence, including land registry search; (c) the Vendor producing a Certificate of Occupancy or evidence of application therefor; and (d) obtaining Governor's Consent to the Deed of Assignment at the Purchaser's cost.\n\nTime is of the essence. If the conditions are not fulfilled within ninety (90) days, either party may terminate by written notice, provided that the deposit shall be forfeited if termination is due to the Purchaser's default.\n\nThe property is sold subject to caveat emptor. The Vendor makes no warranty as to fitness for any particular development, save that the Vendor represents that it has not created any undisclosed mortgage, lien, or third-party interest.\n\nUpon completion, the Vendor shall execute a Deed of Assignment and deliver vacant possession. Stamp duty, registration, and legal fees shall be borne as the parties may agree in the formal contract, which when signed shall constitute the entire agreement and supersede this offer letter."
+  }
+]

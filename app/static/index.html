@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pidgin Law — Make legal English clear for Naija</title>
+  <meta name="description" content="Pidgin Law translates contracts, court papers, tenancy notices and other legal English into clear Nigerian Pidgin. Access to justice, not legal advice." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/styles.css?v=3" />
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to translator</a>
+  <div class="flag-bar" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="Pidgin Law home">
+        <img src="/favicon.svg" width="40" height="40" alt="" />
+        <span>
+          <strong>Pidgin Law</strong>
+          <small>Access to justice for Naija</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#workspace">Translate</a>
+        <a href="#glossary-library">Glossary</a>
+        <a href="#how">How e work</a>
+      </nav>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Legal English. Make e clear.</p>
+          <h1>Turn court paper, contract, and notice into everyday <em>Nigerian Pidgin</em>.</h1>
+          <p class="lede">
+            Pidgin Law help you understand wetin lawyer English really mean — tenancy, work, loan, land, terms of service — without dropping the legal meaning.
+          </p>
+          <ul class="hero-points">
+            <li>Side-by-side English and Pidgin</li>
+            <li>Legal terms explained for Pidgin</li>
+            <li>Copy, download TXT or PDF</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="Important notice">
+          <h2>This no be legal advice</h2>
+          <p>
+            Translation dey help you <strong>understand</strong> the paper. E no replace a Nigerian lawyer, legal aid clinic, or the court.
+            If money, land, police, or pikin dey involved, talk to a qualified professional.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="workspace" class="workspace">
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="tone" role="group" aria-label="Pidgin tone">
+            <button type="button" class="tone-btn is-active" data-tone="everyday">Everyday Pidgin</button>
+            <button type="button" class="tone-btn" data-tone="formal">Formal Pidgin</button>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="include-glossary" checked />
+            Detect legal terms
+          </label>
+            <p class="word-count" id="word-count">0 words</p>
+        </div>
+
+        <div class="sample-row" id="sample-row" aria-label="Try a sample"></div>
+
+        <div class="panels">
+          <article class="panel">
+            <header class="panel-head">
+              <h2>English legal text</h2>
+              <button type="button" class="ghost" id="clear-input">Clear</button>
+            </header>
+            <div class="source-tools">
+              <div class="source-file-row">
+                <input id="source-file" type="file" accept=".pdf,.docx,.txt,.md,.csv,.mp3,.wav,.m4a,.aac,.ogg,.flac,.opus,.webm,audio/*" aria-label="Choose document or audio file" />
+                <button type="button" class="ghost" id="translate-file-btn">Translate file</button>
+              </div>
+              <div class="source-link-row">
+                <input id="source-url" type="url" placeholder="Or paste a public article, PDF, or audio link" aria-label="Public link to translate" />
+                <button type="button" class="ghost" id="translate-url-btn">Translate link</button>
+              </div>
+              <p class="source-note">AI translation sends content to Google. Free-tier data may be used to improve Google services; don’t submit confidential documents.</p>
+            </div>
+            <textarea id="source" placeholder="Paste contract, court paper, tenancy notice, terms of service, or any legal English here…"></textarea>
+            <div class="panel-actions">
+              <button type="button" class="primary" id="translate-btn">
+                Translate to Pidgin
+              </button>
+              <span class="hint">Ctrl + Enter</span>
+            </div>
+          </article>
+
+          <article class="panel output-panel">
+            <header class="panel-head">
+              <h2>Pidgin translation</h2>
+              <div class="view-toggle" role="group" aria-label="Layout">
+                <button type="button" class="chip is-active" data-view="split">Side by side</button>
+                <button type="button" class="chip" data-view="pidgin">Pidgin only</button>
+              </div>
+            </header>
+            <div id="status" class="status" hidden></div>
+            <div id="output" class="output empty">
+              <p>Your Pidgin version go show here. Paste text for the left, or pick a sample on top.</p>
+            </div>
+            <div class="panel-actions">
+              <button type="button" class="ghost" id="copy-btn" disabled>Copy Pidgin</button>
+              <button type="button" class="ghost" id="txt-btn" disabled>Download .txt</button>
+              <button type="button" class="ghost" id="pdf-btn" disabled>Download .pdf</button>
+            </div>
+          </article>
+        </div>
+
+        <section class="glossary-block" id="glossary-results" hidden>
+          <div class="section-head">
+            <h2>Legal glossary for this text</h2>
+            <p>Original term · simple Pidgin · example</p>
+          </div>
+          <div class="glossary-grid" id="glossary-grid"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="glossary-library" class="library">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Browse the legal glossary</h2>
+          <p>Search common contract, court, land, and tenancy terms with Pidgin explanations.</p>
+        </div>
+        <input type="search" id="glossary-search" placeholder="Search: indemnify, C of O, quit notice, jurisdiction…" aria-label="Search glossary" />
+        <div class="glossary-grid" id="glossary-library-grid"></div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="wrap how-grid">
+        <article>
+          <span class="step">1</span>
+          <h3>Paste the paper</h3>
+          <p>Contract, affidavit, tenancy, loan, or app terms — documents of any length.</p>
+        </article>
+        <article>
+          <span class="step">2</span>
+          <h3>Choose how you wan hear am</h3>
+          <p>Everyday Pidgin for compound talk, or Formal Pidgin when you wan read am more serious.</p>
+        </article>
+        <article>
+          <span class="step">3</span>
+          <h3>Compare, copy, keep</h3>
+          <p>Check English beside Pidgin, read the glossary, then copy or download your result.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Pidgin Law</strong> is an Access-to-Justice tool. Translation can miss nuance. Confirm anything important with a lawyer.</p>
+      <p>Built for people wey tok Pidgin.</p>
+    </div>
+  </footer>
+
+  <script src="/config.js" defer></script>
+  <script src="/static/js/app.js?v=3" defer></script>
+</body>
+</html>
