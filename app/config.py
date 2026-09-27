@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     groq_base_url: str = "https://api.groq.com/openai/v1"
     groq_model: str = "llama-3.3-70b-versatile"
     groq_audio_model: str = "whisper-large-v3-turbo"
+    source_user_agent: str = "PidginLaw/1.0"
 
     max_words: int = 0
     request_timeout: float = 120.0

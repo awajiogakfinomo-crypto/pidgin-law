@@ -1,8 +1,10 @@
 import json
 
+import httpx
+
 from app.config import Settings
 from app.models.schemas import Tone
-from app.services.source_ingest import extract_file_text
+from app.services.source_ingest import SourceContent, extract_file_text
 from app.services.translator import translate_document, translate_groq_audio
 
 
@@ -37,6 +39,29 @@ def test_url_translation_blocks_local_network(client):
     assert "local-network" in response.json()["detail"]
 
 
+def test_url_translation_extracts_searchable_pdf(client, monkeypatch):
+    monkeypatch.setattr("app.routers.sources.fetch_url_source", lambda url, user_agent: SourceContent(media=b"pdf", mime_type="application/pdf"))
+    monkeypatch.setattr("app.routers.sources.extract_file_text", lambda filename, data: "The court dismissed the appeal.")
+
+    response = client.post("/api/translate/url", json={"url": "https://example.com/case.pdf"})
+
+    assert response.status_code == 200
+    assert response.json()["original"] == "The court dismissed the appeal."
+
+
+def test_url_translation_explains_forbidden_source(client, monkeypatch):
+    request = httpx.Request("GET", "https://www.sec.gov/example.pdf")
+    response = httpx.Response(403, request=request)
+    error = httpx.HTTPStatusError("Forbidden", request=request, response=response)
+    monkeypatch.setattr("app.routers.sources.fetch_url_source", lambda url, user_agent: (_ for _ in ()).throw(error))
+
+    result = client.post("/api/translate/url", json={"url": "https://www.sec.gov/example.pdf"})
+
+    assert result.status_code == 502
+    assert "SOURCE_USER_AGENT" in result.json()["detail"]
+    assert "upload it directly" in result.json()["detail"]
+
+
 def test_extract_text_file():
     assert extract_file_text("notice.txt", b"  Tenant notice  ") == "Tenant notice"
 
@@ -66,6 +91,26 @@ def test_groq_text_translation(monkeypatch):
     result = translate_document("Groq-specific lease clause.", Tone.everyday, settings=settings)
     assert result.mode == "llm"
     assert result.translation == "Di tenant fit leave."
+
+
+def test_failed_groq_translation_is_not_cached(monkeypatch):
+    attempts = 0
+
+    def fail_translation(*args, **kwargs):
+        nonlocal attempts
+        attempts += 1
+        raise RuntimeError("Provider returned HTTP 429")
+
+    monkeypatch.setattr("app.services.translator._translate_with_groq", fail_translation)
+    settings = Settings(groq_api_key="test-key", groq_model="retry-test-model")
+
+    first = translate_document("Unique retry test legal text.", Tone.everyday, settings=settings)
+    second = translate_document("Unique retry test legal text.", Tone.everyday, settings=settings)
+
+    assert first.mode == "dictionary"
+    assert "HTTP 429" in first.caution
+    assert second.mode == "dictionary"
+    assert attempts == 2
 
 
 def test_groq_audio_transcription(monkeypatch):

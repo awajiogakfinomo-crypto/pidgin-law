@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import httpx
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
 from pydantic import BaseModel, Field
 
@@ -77,10 +78,13 @@ def translate_url(
 ) -> TranslateResponse:
     rate.check(client_ip(request))
     try:
-        source = fetch_url_source(payload.url)
+        source = fetch_url_source(payload.url, settings.source_user_agent)
         if source.media is not None and source.mime_type:
             if source.mime_type == "application/pdf":
-                raise HTTPException(status_code=400, detail="Scanned PDF links are not supported. Use a searchable PDF or paste its text.")
+                text = extract_file_text("source.pdf", source.media)
+                if not text:
+                    raise HTTPException(status_code=400, detail="This PDF has no selectable text. Scanned-PDF OCR is not enabled.")
+                return translate_document(text, payload.tone, payload.include_glossary, settings)
             if not settings.groq_configured:
                 raise HTTPException(status_code=503, detail="Configure GROQ_API_KEY on the server to translate linked audio files.")
             return translate_groq_audio(
@@ -98,5 +102,16 @@ def translate_url(
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except HTTPException:
         raise
+    except httpx.HTTPStatusError as exc:
+        if exc.response.status_code == 403:
+            raise HTTPException(
+                status_code=502,
+                detail=(
+                    "The source website denied access to automated requests. For SEC links, configure "
+                    "SOURCE_USER_AGENT with your application name and operator contact email. "
+                    "If access is still denied, download the PDF and upload it directly."
+                ),
+            ) from exc
+        raise HTTPException(status_code=502, detail=f"Could not read or translate that link: {exc}") from exc
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=502, detail=f"Could not read or translate that link: {exc}") from exc

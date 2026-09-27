@@ -74,13 +74,17 @@ def translate_document(
             result = _translate_with_groq(text, tone, dictionary_hits, include_glossary, settings)
         except Exception as exc:  # noqa: BLE001
             logger.exception("Groq translation failed; using dictionary fallback")
+            failure_detail = " ".join(str(exc).split())
+            if len(failure_detail) > 180:
+                failure_detail = failure_detail[:177] + "..."
+            failure_reason = f": {failure_detail}" if failure_detail else ""
             result = _dictionary_fallback(
                 text,
                 tone,
                 dictionary_hits,
                 caution=(
                     "Full Pidgin translation no succeed this time "
-                    f"({exc.__class__.__name__}). We show dictionary explanations instead."
+                    f"({exc.__class__.__name__}{failure_reason}). We show dictionary explanations instead."
                 ),
             )
     else:
@@ -91,7 +95,8 @@ def translate_document(
             caution=None,
         )
 
-    _cache.set(cache_key, result)
+    if result.mode == "llm" or not settings.groq_configured:
+        _cache.set(cache_key, result)
     return result
 
 

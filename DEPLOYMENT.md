@@ -34,3 +34,5 @@ Then connect the GitHub repository in Netlify. The included `netlify.toml` sets 
 | `API_BASE_URL` | The public origin of the deployed FastAPI service, for example `https://pidgin-law-api.example.com` |
 
 Netlify generates `dist/config.js` from that value and uses the API for translation, glossary, samples, and exports. The API origin should not include `/api`; the frontend adds endpoint paths itself. The FastAPI service currently permits cross-origin browser requests, so the Netlify site can call it directly.
+
+For source sites that restrict automated downloads, configure `SOURCE_USER_AGENT` on the FastAPI service with the application name and an operator contact email (for example, `PidginLaw/1.0 (contact: you@example.com)`). Some sites, including the SEC, may still block requests from cloud-hosted services; users can download an accessible PDF and upload it directly instead.

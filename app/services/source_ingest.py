@@ -70,9 +70,9 @@ def extract_file_text(filename: str, data: bytes) -> str:
     return text
 
 
-def fetch_url_source(url: str) -> SourceContent:
+def fetch_url_source(url: str, user_agent: str = "PidginLaw/1.0") -> SourceContent:
     current_url = url
-    with httpx.Client(timeout=20.0, follow_redirects=False, headers={"User-Agent": "PidginLaw/1.0"}) as client:
+    with httpx.Client(timeout=20.0, follow_redirects=False, headers={"User-Agent": user_agent}) as client:
         for redirect_count in range(MAX_REDIRECTS + 1):
             _validate_public_url(current_url)
             with client.stream("GET", current_url) as response:
